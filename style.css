@@ -13,6 +13,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
+  box-sizing: border-box;
 }
 
 a {
@@ -33,21 +34,52 @@ a:hover {
 }
 
 .wrapper {
-  max-width: 1000px;
+  /* display: flex;
+  flex: 1; */
+  max-width: 100%;
   margin: 0 auto;
-  padding: 50px;
+  padding: 50px 150px;
 }
 
 /* Flex Container */
 .flex-nav ul {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
   border: 1px solid black;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
+.flex-nav ul li {
+  flex-grow: 1;
+}
+
+.flex-nav .social {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  
+}
+
 @media all and (max-width: 1000px) {
+  .flex-nav li {
+    flex: 1 1 50%;
+  }
+  .flex-nav .social {
+    flex: 1 1 25%;
+  }
 }
 
 @media all and (max-width: 500px) {
+  .flex-nav ul {
+    min-width: 110px;
+  }
+  .flex-nav li {
+    flex: 1 1 100%;
+  }
+  .flex-nav .social {
+    flex: 1 1 25%;
+  }
 }
